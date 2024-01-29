@@ -32,7 +32,7 @@ module.exports = function(homebridge) {
 
     //Get data on first startup and poll every 5 mins
     this.getLatest();
-    setInterval(this.getLatest.bind(this), 300000);
+    setInterval(this.getLatest.bind(this), 30000);
   }
 
   // Custom Characteristics and service...
