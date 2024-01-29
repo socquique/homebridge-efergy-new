@@ -1,10 +1,10 @@
 {
-  "name": "homebridge-efergy2",
+  "name": "homebridge-efergy3",
   "version": "0.1.0",
   "description": "Efergy support for Homebridge: https://github.com/nfarina/homebridge",
   "license": "ISC",
   "keywords": [
-    "homebridge-plugin2"
+    "homebridge-plugin3"
   ],
   "repository": {
     "type": "git",

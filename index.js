@@ -9,7 +9,7 @@ module.exports = function(homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
 
-  homebridge.registerAccessory("homebridge-efergy2", "Efergy2", Efergy);
+  homebridge.registerAccessory("homebridge-efergy3", "Efergy3", Efergy);
   var FakeGatoHistoryService = require('fakegato-history')(homebridge);
   //Fakegato-history masquerading as Eve Energy.
   //Stores history on local filesystem of homebridge appliance
