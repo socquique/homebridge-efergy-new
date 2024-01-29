@@ -9,7 +9,7 @@ module.exports = function(homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
 
-  homebridge.registerAccessory("homebridge-efergy", "Efergy", Efergy);
+  homebridge.registerAccessory("homebridge-efergy2", "Efergy2", Efergy);
   var FakeGatoHistoryService = require('fakegato-history')(homebridge);
   //Fakegato-history masquerading as Eve Energy.
   //Stores history on local filesystem of homebridge appliance
@@ -19,15 +19,16 @@ module.exports = function(homebridge) {
 
   function Efergy(log, config) {
     // configuration
-    this.token = config['token'];
-    this.name = config['name'];
+    this.token = config['token'] || "RudgDXwEZ9-hJv4j1wIEGPMaHuVUnF2M";
+    this.name = config['name'] || "NoName";
     this.offset = config['offset'] || 0;
     this.period = config['period'] || "day";
 
     this.log = log;
 
-    this.kWh_url = "http://www.energyhive.com/mobile_proxy/getEnergy?token=" + this.token + "&period=" + this.period + "&offset=" + this.offset;
-    this.W_url = "http://www.energyhive.com/mobile_proxy/getCurrentValuesSummary?token=" + this.token;
+    //https://www.energyhive.com/mobile_proxy/getCurrentValuesSummary?token=
+    this.kWh_url = "https://www.energyhive.com/mobile_proxy/getEnergy?token=" + this.token + "&period=" + this.period + "&offset=" + this.offset;
+    this.W_url = "https://www.energyhive.com/mobile_proxy/getCurrentValuesSummary?token=" + this.token;
 
     //Get data on first startup and poll every 5 mins
     this.getLatest();
